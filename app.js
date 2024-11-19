@@ -12,7 +12,7 @@ const flowProductos = addKeyword(['productos', 'ver', 'sweaters', 'suéteres'])
     '\n👉 Responde con *catalogo* para ver las opciones disponibles.',
   ]);
 
-  const flowCatalogo = addKeyword(['catalogo']).addAnswer('Te estoy enviando un pdf',{
+  const flowCatalogo = addKeyword(['catalogo','catálogo']).addAnswer('Te estoy enviando un pdf',{
     media:'https://heyzine.com/flip-book/82c6f8e02b.html#page/1',
     
   }).addAnswer([
@@ -52,7 +52,7 @@ const flowDespedida = addKeyword(['gracias', 'adios', 'chao', 'bye']).addAnswer(
 ]);
 
 // Flujo principal de bienvenida
-const flowPrincipal = addKeyword(['hola', 'buenas', 'buenos dias','mas informacion','info','información', 'hello'])
+const flowPrincipal = addKeyword(['hola', 'buenas', 'buenos dias','mas informacion','info','información', 'hello','¡Hola! Podrías darme más información','Vi tu anuncio en Facebook'])
   .addAnswer('🙌 ¡Hola! Bienvenido a *L & S Trends* 👚')
   .addAnswer([
     'Somos una tienda especializada en suéteres navideños modernos y de alta calidad. 🎄',

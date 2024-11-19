@@ -15,6 +15,23 @@ npm start
 desarrollo 
 npm run dev
 
+en el archivo package.json 
+tienes que sustituir esto 
+    "scripts": {
+        
+        "pre-copy": "cd .. && npm run  copy.lib base-baileys-memory",
+        "start": "node app.js"
+    },
+por esto
+
+  "scripts": {
+        "prestart": "npx eslint . --no-ignore",
+        "pre-copy": "cd .. && npm run  copy.lib base-baileys-memory",
+        "start": "node app.js"
+    },
+
+SOLO EN DESARROLLO
+
 
 ---
 ## Recursos
