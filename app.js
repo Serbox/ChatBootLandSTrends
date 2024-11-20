@@ -53,13 +53,13 @@ const flowDespedida = addKeyword(['gracias', 'adios', 'chao', 'bye']).addAnswer(
 
 // Flujo principal de bienvenida
 const flowPrincipal = addKeyword(['hola', 'buenas', 'buenos dias','mas informacion','info','información', 'hello','¡Hola! Podrías darme más información','Vi tu anuncio en Facebook'])
-  .addAnswer('🙌 ¡Hola! Bienvenido a *L & S Trends* 👚')
+  .addAnswer('🙌 ¡Hola! Bienvenid@ a *L & S Trends* 👚',{media:'https://i.ibb.co/KhwQyFg/ls.png'})
   .addAnswer([
     'Somos una tienda especializada en suéteres navideños modernos y de alta calidad. 🎄',
     '¿En qué podemos ayudarte hoy? Puedes elegir entre las siguientes opciones:',
     '\n👉 *productos* para ver nuestra oferta',
     '👉 *contacto* para hablar con un asesor',
-    '\nEscribe una palabra clave para comenzar, o *menu* para volver a este mensaje.',
+    '\nEscribe una palabra clave para comenzar, *Productos* o *Contacto*',
   ], null, null, [flowProductos, flowCatalogo, flowPrecios, flowPedidos, flowContacto, flowDespedida]);
 
 const main = async () => {
