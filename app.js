@@ -23,7 +23,7 @@ const flowProductos = addKeyword(['productos', 'ver', 'sweaters', 'suéteres'])
 const flowPrecios = addKeyword(['precio']).addAnswer([
   '💰 Los precios son unicos y te incluyen el envio si estas en Bogota o alrededores 🎁😊',
   '- Todos los sueters tienen el precio de $75.000 COP.',
-  '\nEscribe *comprar* seguido del nombre del suéter para iniciar tu pedido.',
+  '\nEscribe *comprar* iniciar tu pedido.',
 ]);
 
 // Flujo para realizar pedidos
@@ -50,12 +50,13 @@ const flowDespedida = addKeyword(['gracias', 'adios', 'chao', 'bye']).addAnswer(
 // Flujo principal de bienvenida
 const flowPrincipal = addKeyword(['hola', 'buenas', 'buenos dias','mas informacion','info','información', 'hello','¡Hola! Podrías darme más información','Vi tu anuncio en Facebook'])
 .addAnswer(
-  async (ctx) => {
+  async (ctx, { flowDynamic }) => {
     const userName = ctx.pushName || 'Amig@'; 
-    return `🙌 ¡Hola, ${userName}! Bienvenid@ a *L & S Trends* 👚`;
+    await flowDynamic(`🙌 ¡Hola, ${userName}! Bienvenid@ a *L & S Trends* 👚`);
   },
   { media: 'https://i.ibb.co/KhwQyFg/ls.png' }
-)
+);
+
 
   .addAnswer([
     'Somos una tienda especializada en suéteres navideños modernos y de alta calidad. 🎄',
