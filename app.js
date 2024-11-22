@@ -55,7 +55,7 @@ const flowPrincipal = addKeyword(['hola', 'buenas', 'buenos dias','mas informaci
     await flowDynamic(`🙌 ¡Hola, ${userName}! Bienvenid@ a *L & S Trends* 👚`);
   },
   { media: 'https://i.ibb.co/KhwQyFg/ls.png' }
-);
+)
 
 
   .addAnswer([
