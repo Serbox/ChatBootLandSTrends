@@ -57,7 +57,6 @@ const flowPrincipal = addKeyword(['hola', 'buenas', 'buenos dias','mas informaci
   { media: 'https://i.ibb.co/KhwQyFg/ls.png' }
 )
 
-
   .addAnswer([
     'Somos una tienda especializada en suéteres navideños modernos y de alta calidad. 🎄',
     '¿En qué podemos ayudarte hoy? Puedes elegir entre las siguientes opciones:',
