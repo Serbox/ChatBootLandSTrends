@@ -49,13 +49,9 @@ const flowDespedida = addKeyword(['gracias', 'adios', 'chao', 'bye']).addAnswer(
 
 // Flujo principal de bienvenida
 const flowPrincipal = addKeyword(['hola', 'buenas', 'buenos dias','mas informacion','info','información', 'hello','¡Hola! Podrías darme más información','Vi tu anuncio en Facebook'])
-.addAnswer(
-  async (ctx, { flowDynamic }) => {
-    const userName = ctx.pushName || 'Amig@'; 
-    await flowDynamic(`🙌 ¡Hola, ${userName}! Bienvenid@ a *L & S Trends* 👚`);
-  },
-  { media: 'https://i.ibb.co/KhwQyFg/ls.png' }
-)
+.addAnswer('Este mensaje envia tres botones', {
+  buttons: [{ body: 'Boton 1' }, { body: 'Boton 2' }, { body: 'Boton 3' }],
+})
 
   .addAnswer([
     'Somos una tienda especializada en suéteres navideños modernos y de alta calidad. 🎄',
