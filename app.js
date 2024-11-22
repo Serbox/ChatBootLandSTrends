@@ -12,12 +12,8 @@ const flowProductos = addKeyword(['productos', 'ver', 'sweaters', 'suéteres'])
     '\n👉 Responde con *catalogo* para ver las opciones disponibles.',
   ]);
 
-  const flowCatalogo = addKeyword(['catalogo','catálogo']).addAnswer('Te estoy enviando un pdf',{
-    media:'https://heyzine.com/flip-book/82c6f8e02b.html#page/1',
-    
-  }).addAnswer([
-    'Abrelo con tu navegador favorito 🧭, si tienes algun problema dinos por favor',
-    '\n👉 Responde con *Precio* para saber mas del producto.'
+  const flowCatalogo = addKeyword(['catalogo','catálogo']).addAnswer([
+    'En un segundo te envio nuestro catalogo ⌛'
   ]
 
   )
@@ -53,7 +49,14 @@ const flowDespedida = addKeyword(['gracias', 'adios', 'chao', 'bye']).addAnswer(
 
 // Flujo principal de bienvenida
 const flowPrincipal = addKeyword(['hola', 'buenas', 'buenos dias','mas informacion','info','información', 'hello','¡Hola! Podrías darme más información','Vi tu anuncio en Facebook'])
-  .addAnswer('🙌 ¡Hola! Bienvenid@ a *L & S Trends* 👚',{media:'https://i.ibb.co/KhwQyFg/ls.png'})
+.addAnswer(
+  async (ctx) => {
+    const userName = ctx.pushName || 'Amig@'; 
+    return `🙌 ¡Hola, ${userName}! Bienvenid@ a *L & S Trends* 👚`;
+  },
+  { media: 'https://i.ibb.co/KhwQyFg/ls.png' }
+)
+
   .addAnswer([
     'Somos una tienda especializada en suéteres navideños modernos y de alta calidad. 🎄',
     '¿En qué podemos ayudarte hoy? Puedes elegir entre las siguientes opciones:',
